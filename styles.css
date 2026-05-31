@@ -179,6 +179,10 @@ main.container {
   margin: 38px 0;
 }
 
+section[id] {
+  scroll-margin-top: 108px;
+}
+
 h1,
 h2,
 h3 {
