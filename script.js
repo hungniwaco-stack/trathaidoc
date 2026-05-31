@@ -1,27 +1,9 @@
-const products = document.querySelectorAll(".product");
-const GA_MEASUREMENT_ID = "G-WYJTXB1CFN";
+﻿const products = document.querySelectorAll(".product");
 
 const sendAnalyticsEvent = (eventName, params = {}) => {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event: eventName, ...params });
-  if (typeof window.gtag === "function") {
-    window.gtag("event", eventName, params);
-  }
 };
-
-if (GA_MEASUREMENT_ID && !window.google_tag_manager) {
-  const gtagScript = document.createElement("script");
-  gtagScript.async = true;
-  gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  document.head.appendChild(gtagScript);
-
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag() {
-    window.dataLayer.push(arguments);
-  };
-  window.gtag("js", new Date());
-  window.gtag("config", GA_MEASUREMENT_ID);
-}
 
 products.forEach((product) => {
   const oldPriceEl = product.querySelector(".old-price");
