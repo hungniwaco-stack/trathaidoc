@@ -446,10 +446,44 @@ h3 {
   color: #dcf0df;
 }
 
+.about-editorial {
+  background: #f8f5ec;
+  border: 1px solid #e7dfcf;
+  border-radius: 16px;
+  padding: clamp(20px, 3vw, 34px);
+}
+
+.about-editorial h2 {
+  margin-bottom: 12px;
+}
+
+.about-editorial h3 {
+  margin: 26px 0 10px;
+}
+
+.about-editorial p {
+  color: #33453a;
+}
+
+.about-editorial ul {
+  margin: 0;
+  padding-left: 22px;
+  color: #33453a;
+}
+
+.about-editorial li {
+  margin-bottom: 6px;
+}
+
+.last-updated {
+  margin-top: 18px;
+}
+
 .site-footer {
-  background: #1a2d21;
-  color: #d2e4d5;
+  background: #ece7da;
+  color: #1f2b24;
   padding: 32px 0;
+  border-top: 1px solid #ddd3bf;
 }
 
 .site-footer h3 {
@@ -458,7 +492,7 @@ h3 {
 
 .site-footer p {
   margin: 0;
-  color: #c2d7c7;
+  color: #314236;
 }
 
 .footer-links {
@@ -470,7 +504,7 @@ h3 {
 }
 
 .footer-links a {
-  color: #d8eadb;
+  color: #1f2b24;
   text-decoration: none;
 }
 
