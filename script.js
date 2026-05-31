@@ -9,7 +9,14 @@ products.forEach((product) => {
   const oldPrice = Number(oldPriceEl.textContent.replace(/[^\d]/g, ""));
   const newPrice = Number(newPriceEl.textContent.replace(/[^\d]/g, ""));
 
-  if (!oldPrice || !newPrice || newPrice >= oldPrice) return;
+  if (!oldPrice || !newPrice) return;
+
+  if (newPrice === oldPrice) {
+    oldPriceEl.remove();
+    return;
+  }
+
+  if (newPrice > oldPrice) return;
 
   const discountPercent = Math.round(((oldPrice - newPrice) / oldPrice) * 100);
   const badge = document.createElement("span");

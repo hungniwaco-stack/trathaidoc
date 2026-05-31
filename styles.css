@@ -49,8 +49,24 @@ body {
 
 .brand img {
   display: block;
-  height: 52px;
+  height: 72px;
   width: auto;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-title {
+  font-weight: 800;
+  font-size: clamp(18px, 2.2vw, 30px);
+  letter-spacing: 0.06em;
+  color: var(--brand-strong);
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .menu {
@@ -474,6 +490,10 @@ h3 {
   }
 
   .brand img {
-    height: 46px;
+    height: 58px;
+  }
+
+  .brand-title {
+    font-size: clamp(16px, 4vw, 20px);
   }
 }
