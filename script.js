@@ -1,13 +1,15 @@
 const products = document.querySelectorAll(".product");
-const GA_MEASUREMENT_ID = "";
+const GA_MEASUREMENT_ID = "G-WYJTXB1CFN";
 
 const sendAnalyticsEvent = (eventName, params = {}) => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: eventName, ...params });
   if (typeof window.gtag === "function") {
     window.gtag("event", eventName, params);
   }
 };
 
-if (GA_MEASUREMENT_ID) {
+if (GA_MEASUREMENT_ID && !window.google_tag_manager) {
   const gtagScript = document.createElement("script");
   gtagScript.async = true;
   gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
