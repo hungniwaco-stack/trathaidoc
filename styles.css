@@ -461,6 +461,40 @@ h3 {
   color: #c2d7c7;
 }
 
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.footer-links a {
+  color: #d8eadb;
+  text-decoration: none;
+}
+
+.page-content {
+  padding: 34px 0 60px;
+}
+
+.article-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(20px, 3vw, 34px);
+}
+
+.article-card p,
+.article-card li {
+  color: var(--muted);
+}
+
+.article-card ol {
+  margin: 0 0 16px;
+  padding-left: 18px;
+}
+
 .mobile-buy-bar {
   display: none;
 }

@@ -25,6 +25,18 @@ products.forEach((product) => {
   product.appendChild(badge);
 });
 
+const affiliateLinks = document.querySelectorAll(".affiliate-link");
+affiliateLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    const key = "affiliate_click_stats";
+    const current = JSON.parse(localStorage.getItem(key) || "{}");
+    const product = link.dataset.product || "unknown";
+    current[product] = (current[product] || 0) + 1;
+    current.last_click_at = new Date().toISOString();
+    localStorage.setItem(key, JSON.stringify(current));
+  });
+});
+
 const faqQuestions = document.querySelectorAll(".faq-question");
 
 faqQuestions.forEach((button) => {
