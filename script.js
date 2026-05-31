@@ -1,4 +1,25 @@
 const products = document.querySelectorAll(".product");
+const GA_MEASUREMENT_ID = "";
+
+const sendAnalyticsEvent = (eventName, params = {}) => {
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, params);
+  }
+};
+
+if (GA_MEASUREMENT_ID) {
+  const gtagScript = document.createElement("script");
+  gtagScript.async = true;
+  gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  document.head.appendChild(gtagScript);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() {
+    window.dataLayer.push(arguments);
+  };
+  window.gtag("js", new Date());
+  window.gtag("config", GA_MEASUREMENT_ID);
+}
 
 products.forEach((product) => {
   const oldPriceEl = product.querySelector(".old-price");
@@ -34,8 +55,27 @@ affiliateLinks.forEach((link) => {
     current[product] = (current[product] || 0) + 1;
     current.last_click_at = new Date().toISOString();
     localStorage.setItem(key, JSON.stringify(current));
+    sendAnalyticsEvent("affiliate_click", { product });
   });
 });
+
+const ctaVariants = [
+  { label: "Xem sản phẩm tốt nhất hôm nay", key: "variant_a" },
+  { label: "So sánh giá và mua trên Shopee", key: "variant_b" }
+];
+const ctaVariantKey = "cta_variant_2026_05";
+const ctaVariant = localStorage.getItem(ctaVariantKey) || ctaVariants[Math.floor(Math.random() * ctaVariants.length)].key;
+localStorage.setItem(ctaVariantKey, ctaVariant);
+const chosenVariant = ctaVariants.find((item) => item.key === ctaVariant);
+
+if (chosenVariant) {
+  document.querySelectorAll("[data-cta-slot='hero-primary'], [data-cta-slot='bottom-primary']").forEach((cta) => {
+    cta.textContent = chosenVariant.label;
+    cta.addEventListener("click", () => {
+      sendAnalyticsEvent("cta_click", { slot: cta.dataset.ctaSlot, variant: chosenVariant.key });
+    });
+  });
+}
 
 const faqQuestions = document.querySelectorAll(".faq-question");
 
