@@ -1,0 +1,364 @@
+:root {
+  --bg: #f3f8ee;
+  --surface: #ffffff;
+  --ink: #1c3021;
+  --muted: #56705c;
+  --brand: #3f7d45;
+  --brand-strong: #2f5f34;
+  --accent: #c9a45d;
+  --line: #dce9d9;
+  --radius: 18px;
+  --shadow: 0 16px 40px rgba(35, 73, 44, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 12% 24%, rgba(201, 164, 93, 0.22), transparent 40%),
+    radial-gradient(circle at 88% 12%, rgba(63, 125, 69, 0.26), transparent 42%),
+    linear-gradient(180deg, #eef7e7, #f8fbf5);
+  padding-bottom: 48px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.nav-cta {
+  text-decoration: none;
+  color: var(--brand-strong);
+  font-weight: 600;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.kicker {
+  color: var(--brand-strong);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+h1, h2, h3 {
+  font-family: "Prata", serif;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.06;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.hero-points {
+  margin-top: 22px;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.hero-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+.lead-form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #cddfca;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.btn {
+  border: 0;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(130deg, var(--brand), var(--brand-strong));
+  color: #fff;
+}
+
+.btn-soft {
+  background: #eaf3e6;
+  color: var(--brand-strong);
+}
+
+.full {
+  width: 100%;
+}
+
+.benefits {
+  margin: 56px auto;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.benefits article {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.products {
+  padding: 52px 0;
+}
+
+.section-head {
+  max-width: 700px;
+}
+
+.section-head p {
+  color: var(--muted);
+}
+
+.product-grid {
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  position: relative;
+}
+
+.product img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 12px 0 14px;
+  border: 1px solid #e5efe2;
+  transition: transform 320ms ease, filter 320ms ease;
+}
+
+.product .tag {
+  font-size: 12px;
+  color: #735726;
+  background: #f8efdc;
+  padding: 5px 10px;
+  border-radius: 999px;
+}
+
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(33, 72, 44, 0.14);
+  border-color: #c6dcc2;
+}
+
+.product:hover img {
+  transform: scale(1.025);
+  filter: saturate(1.05);
+}
+
+.shop-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  margin-top: 6px;
+  color: #fff;
+  background: linear-gradient(130deg, #ee4d2d, #d94024);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.shop-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(219, 76, 43, 0.28);
+  filter: brightness(1.03);
+}
+
+.shop-btn:active {
+  transform: translateY(0);
+}
+
+.shop-btn::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: #fff;
+  display: inline-block;
+  position: relative;
+  box-shadow: inset 0 0 0 2px #ee4d2d;
+}
+
+.shop-btn::after {
+  content: "S";
+  position: relative;
+  margin-left: -22px;
+  width: 16px;
+  text-align: center;
+  color: #ee4d2d;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.old-price {
+  color: #8a9389;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.new-price {
+  color: #b3341c;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: linear-gradient(135deg, #ffd85a, #f7b733);
+  color: #6d3b00;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #e8c66a;
+}
+
+.social-proof {
+  margin: 24px auto 60px;
+}
+
+.quotes {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+blockquote {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  color: #3f5645;
+}
+
+.cta {
+  padding: 26px 0 56px;
+}
+
+.cta-wrap {
+  background: linear-gradient(130deg, #2f5f34, #3f7d45);
+  color: #fff;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+}
+
+.footer {
+  background: #112016;
+  color: #cfe1d0;
+  padding: 22px 0;
+}
+
+.footer .note {
+  color: #94b599;
+}
+
+@media (max-width: 900px) {
+  .hero-grid,
+  .benefits,
+  .product-grid,
+  .quotes {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
