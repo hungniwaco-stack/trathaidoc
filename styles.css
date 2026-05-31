@@ -45,9 +45,14 @@ html, body {
 
 .brand {
   text-decoration: none;
-  color: var(--ink);
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand img {
+  height: 58px;
+  width: auto;
+  display: block;
 }
 
 .nav-cta {
@@ -445,5 +450,9 @@ blockquote {
 
   body {
     padding-bottom: 78px;
+  }
+
+  .brand img {
+    height: 48px;
   }
 }
