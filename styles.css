@@ -378,6 +378,38 @@ h3 {
   text-decoration: underline;
 }
 
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 14px;
+}
+
+.compare-table th,
+.compare-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+}
+
+.compare-table thead th {
+  background: var(--chip);
+  color: var(--brand-strong);
+  font-weight: 700;
+}
+
+.compare-table tbody tr:nth-child(even) {
+  background: var(--surface);
+}
+
+@media (max-width: 600px) {
+  .compare-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
 .knowledge-card h3 {
   margin-bottom: 8px;
 }
