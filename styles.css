@@ -313,7 +313,8 @@ h3 {
 .product-image {
   width: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--surface);
   border-radius: 12px;
   border: 1px solid #e6eadf;
   margin: 12px 0;
