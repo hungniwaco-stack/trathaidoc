@@ -3,6 +3,9 @@
 const sendAnalyticsEvent = (eventName, params = {}) => {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event: eventName, ...params });
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, params);
+  }
 };
 
 products.forEach((product) => {
